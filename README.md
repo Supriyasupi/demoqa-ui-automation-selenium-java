@@ -1,6 +1,3 @@
-# DemoQA UI Automation – Selenium + Java + TestNG
-
-
 # DemoQA UI Automation – Selenium + Java + TestNG  
 
 ## 📘 Overview  
@@ -193,7 +190,6 @@ Logs (optional) → test-output/logs/
 
 **⚠️ Known Limitations**
 
-DemoQA is dynamic: elements may shift, requiring explicit waits.
 
 Only Chrome & Firefox configured (Edge/Safari can be added).
 
