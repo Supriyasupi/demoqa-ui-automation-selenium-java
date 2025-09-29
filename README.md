@@ -1,4 +1,11 @@
-# DemoQA UI Automation – Selenium + Java + TestNG  
+# 🚀 DemoQA UI Automation Test Suite (Selenium + TestNG + Maven)
+
+## 📌 Senior QA Automation – Coding Assignment
+
+This project is a **robust UI automation framework** designed for the [DemoQA](https://demoqa.com/) application.  
+It was built using **Java, Selenium WebDriver, TestNG, Maven**, and follows **Page Object Model (POM)**.  
+
+The framework covers **critical user journeys**, leverages **JSON fixtures for test data**, supports **parallel execution**, generates **HTML reports**, and captures **screenshots on test failures**.
 
 ## 📘 Overview  
 This project is a **UI Test Automation Framework** built using:  
@@ -20,18 +27,6 @@ Designed to automate the **DemoQA website** and is fully **CI/CD pipeline ready*
 - ✅ Test data management -Fixtures (properties/JSON)  
 - ✅ HTML reporting (Extent / Allure integration)  , SureFire Plugin
 - ✅ CI/CD ready (GitHub Actions pipeline configured)  
-
----
-
-## 🔹 Project Structure  
-# 🚀 DemoQA UI Automation Test Suite (Selenium + TestNG + Maven)
-
-## 📌 Senior QA Automation – Coding Assignment
-
-This project is a **robust UI automation framework** designed for the [DemoQA](https://demoqa.com/) application.  
-It was built using **Java, Selenium WebDriver, TestNG, Maven**, and follows **Page Object Model (POM)**.  
-
-The framework covers **critical user journeys**, leverages **JSON fixtures for test data**, supports **parallel execution**, generates **HTML reports**, and captures **screenshots on test failures**.
 
 ---
 
@@ -66,7 +61,7 @@ The framework covers **critical user journeys**, leverages **JSON fixtures for t
    - Validate selected values appear in output.
 
 
-   5.**Profile Page - LoginDataDrivenTests**
+5.**Profile Page - LoginDataDrivenTests**
    **Authentication workflows (Login/Profile)**
 **Data-Driven Login (from Excel/CSV/TestNG DataProvider):**
 
