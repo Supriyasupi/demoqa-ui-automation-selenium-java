@@ -1,0 +1,7 @@
+com/demoqa/tests/WebTablesTests.class
+com/demoqa/tests/PracticeFormTests.class
+com/demoqa/tests/CheckBoxTests.class
+com/demoqa/tests/LoginTests.class
+com/demoqa/tests/BaseTest.class
+com/demoqa/tests/LoginDataDrivenTests.class
+com/demoqa/tests/TestListener.class

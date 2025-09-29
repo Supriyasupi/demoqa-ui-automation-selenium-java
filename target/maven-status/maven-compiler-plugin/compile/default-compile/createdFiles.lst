@@ -1,0 +1,9 @@
+com/demoqa/pages/WebTablesPage.class
+com/demoqa/pages/ProfilePage.class
+com/demoqa/pages/BasePage.class
+com/demoqa/utils/WaitUtils.class
+com/demoqa/utils/ExtentManager.class
+com/demoqa/pages/CheckBoxPage.class
+com/demoqa/utils/DriverFactory.class
+com/demoqa/pages/LoginPage.class
+com/demoqa/pages/PracticeFormPage.class

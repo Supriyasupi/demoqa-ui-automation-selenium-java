@@ -1,0 +1,9 @@
+{
+  "firstName": "Auto",
+  "lastName": "User",
+  "email": "auto_user1@example.com",
+  "age": "30",
+  "salary": "90000",
+  "department": "QA",
+  "newAge": "31"
+}

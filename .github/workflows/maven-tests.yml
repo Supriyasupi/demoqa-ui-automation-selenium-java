@@ -1,0 +1,70 @@
+name: UI Tests (Selenium + TestNG)
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        java: [ '11', '21' ]          # Runs on both JDK 11 and 21
+        browser: [ 'chrome', 'firefox' ]  # Cross-browser
+    env:
+      MAVEN_OPTS: -Xmx1024m
+      # If your DriverFactory supports it, it can read HEADLESS=true to add --headless
+      HEADLESS: "true"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Temurin JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: ${{ matrix.java }}
+          cache: maven
+
+      # Install browsers available for the matrix value
+      - name: Setup Chrome
+        if: matrix.browser == 'chrome'
+        uses: browser-actions/setup-chrome@v1
+
+      - name: Setup Firefox
+        if: matrix.browser == 'firefox'
+        uses: browser-actions/setup-firefox@v1
+
+      - name: Show browser versions
+        run: |
+          if [ "${{ matrix.browser }}" = "chrome" ]; then
+            google-chrome --version || true
+            chromedriver --version || true
+          else
+            firefox --version || true
+            geckodriver --version || true
+          fi
+
+      # Run tests under a virtual display so non-headless also works
+      - name: Build & Test (xvfb)
+        run: |
+          xvfb-run -a mvn -B -ntp clean test -Dbrowser=${{ matrix.browser }}
+
+      # Always upload reports/screenshots, even if tests fail
+      - name: Upload reports & screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reports-${{ matrix.browser }}-jdk${{ matrix.java }}
+          path: |
+            target/surefire-reports/**
+            test-output/**
+            target/extent-reports/**
+            **/screenshots/**
+          if-no-files-found: warn
